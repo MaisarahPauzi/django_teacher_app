@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h1>List of Students</h1>
+
+<table>
+    <tr>
+        <th>Student</th>
+    <tr>
+    {% for s in students  %}
+    <tr>
+        <td>
+            {{s.firstname}}&nbsp;{{s.lastname}}
+        </td>
+    <tr>
+    {% endfor %}
+</table>
+</body>

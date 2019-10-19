@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h1>List of Subjects</h1>
+
+{% comment %} <table>
+    <tr>
+        <th>Student</th>
+        <th>Subject</th>
+        <th>Grade</th>
+        <th>Marks</th>
+    <tr>
+    {% for r in results  %}
+    <tr>
+        <td>
+            {{r.student}}
+        </td>
+        <td>
+            {{r.subject}}
+        </td>
+        <td>
+            {{r.grade}}
+        </td>
+        <td>
+            {{r.marks}}
+        </td>
+    <tr>
+    {% endfor %}
+</table> {% endcomment %}
+</body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h1>Examination Results</h1>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Student</th>
+        <th>Status</th>
+        <th>Remarks</th>
+    <tr>
+    {% for a in attendance  %}
+    <tr>
+        <td>
+            {{a.date_of_attendance}}
+        </td>
+        <td>
+            {{a.student}}
+        </td>
+        <td>
+            {% if a.status %}
+            present 
+            {% else %}
+            absent 
+            {% endif %}
+        </td>
+        {% if  r.remarks is not Null %}
+        <td>
+            {{r.remarks}}
+        </td>
+        {% endif %}
+    <tr>
+    {% endfor %}
+</table>
+</body>
