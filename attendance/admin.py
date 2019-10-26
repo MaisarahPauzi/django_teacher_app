@@ -4,7 +4,7 @@ from daterange_filter.filter import DateRangeFilter
 from .models import Attendance
 
 class AttendanceAdmin(admin.ModelAdmin):
-    list_display = ('date_of_attendance', 'student', 'status', 'remarks')
+    list_display = ('id','date_of_attendance', 'student', 'status', 'remarks')
     list_filter = (('date_of_attendance',DateRangeFilter), 'student', 'status')
     date_hierarchy = 'date_of_attendance'
 

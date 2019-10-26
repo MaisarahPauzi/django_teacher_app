@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h1>Attendance Today ({{date.date}})</h1>
+
+<table>
+    <tr>
+        <th>Student</th>
+        <th>If present</th>
+        <th>If absent, state the remarks</th>
+    <tr>
+    {% for s in students  %}
+    <tr>
+        <td>
+            {{s.id}} | {{s.firstname}}&nbsp;{{s.lastname}}
+        </td>
+        <td>
+            If present, click  
+            <a href='/attendance/add_by_student/?id={{s.id}}&status=True'>PRESENT</a>
+        </td>
+        <td>
+            <form method="GET" action='/attendance/add_by_student/'>
+            <input type='text' name='id' value='{{s.id}}' hidden></input>
+            <input type='text' name='status' value='' hidden></input>
+            <input type='text' name='remarks' placeholder='State reason of absent'></input>
+            <input type='submit'></input>
+            </form>
+        </td>
+    <tr>
+    {% endfor %}
+</table>
+
+</body>

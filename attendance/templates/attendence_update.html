@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h1>Edit Attendance of {{attendance.student}} on {{attendance.date_of_attendance}}</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</body>

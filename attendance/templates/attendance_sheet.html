@@ -8,14 +8,16 @@ th, td {
 </style>
 </head>
 <body>
-<h1>Examination Results</h1>
+<h1>Attendance Records</h1>
 
+<a href='/attendance/add/'>Add New Record</a>
 <table>
     <tr>
         <th>Date</th>
         <th>Student</th>
         <th>Status</th>
         <th>Remarks</th>
+        <th>Action</th>
     <tr>
     {% for a in attendance  %}
     <tr>
@@ -32,12 +34,15 @@ th, td {
             absent 
             {% endif %}
         </td>
-        {% if  r.remarks is not Null %}
         <td>
-            {{r.remarks}}
+            {{a.remarks}}
         </td>
-        {% endif %}
+        <td>
+            <a href='/attendance/update/{{a.id}}'>Edit</a>
+            <a href='/attendance/delete/{{a.id}}'>Delete</a>
+        </td>
     <tr>
     {% endfor %}
 </table>
+
 </body>
